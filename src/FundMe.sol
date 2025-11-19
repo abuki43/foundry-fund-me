@@ -18,7 +18,7 @@ contract FundMe {
     uint256 public constant MINIMUM_USD = 5 * 10 ** 18;
     AggregatorV3Interface private s_priceFeed;
 
-    constructor(address priceFeed)  {
+    constructor(address priceFeed) {
         i_owner = msg.sender;
         s_priceFeed = AggregatorV3Interface(priceFeed);
     }
@@ -42,7 +42,7 @@ contract FundMe {
 
     function cheaperWitdraw() public onlyOwner {
         uint256 fundersLength = s_funders.length;
-        for(uint256 funderIndex=0;funderIndex < fundersLength;funderIndex++){
+        for (uint256 funderIndex = 0; funderIndex < fundersLength; funderIndex++) {
             address funder = s_funders[funderIndex];
             s_addressToAmountFunded[funder] = 0;
         }
@@ -99,7 +99,6 @@ contract FundMe {
     function getOwner() public view returns (address) {
         return i_owner;
     }
-
 }
 
 // Concepts we didn't cover yet (will cover in later sections)

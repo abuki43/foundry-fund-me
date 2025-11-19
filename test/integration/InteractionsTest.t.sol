@@ -2,11 +2,10 @@
 
 pragma solidity ^0.8.18;
 
-import {Test,console} from "forge-std/Test.sol";
+import {Test, console} from "forge-std/Test.sol";
 import {FundMe} from "../../src/FundMe.sol";
 import {DeployFundMe} from "../../script/DeployFundMe.s.sol";
-import {FundFundMe,WithdrawFundMe} from "../../script/Interaction.s.sol";
-
+import {FundFundMe, WithdrawFundMe} from "../../script/Interaction.s.sol";
 
 contract InteractionsTest is Test {
     FundMe fundMe;
@@ -31,5 +30,4 @@ contract InteractionsTest is Test {
 
         assert(address(fundMe).balance == 0);
     }
-    
 }
